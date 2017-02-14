@@ -1,4 +1,7 @@
 
+group = "us.hexcoder"
+version = "0.0.1-SNAPSHOT"
+
 apply plugin: "java"
 
 repositories {
@@ -7,6 +10,7 @@ repositories {
 
 dependencies {
 	compile "org.jooq:jooq-codegen:${jOOQVersion}"
-	compile "net.postgis:postgis-jdbc:${PostGISVersion}"	
-}
+	compile "net.postgis:postgis-jdbc:${PostGISVersion}"
 
+	testCompile "junit:junit:${JUnitVersion}"
+}
