@@ -21,7 +21,7 @@ public class PointConverterTest {
 
 	@Test
 	public void testFromWithNull() {
-		Assert.assertNull("Converting null should return null", from(null));
+		Assert.assertNull(from(null));
 	}
 
 	@Test
@@ -41,9 +41,7 @@ public class PointConverterTest {
 
 	@Test
 	public void testToWithNull() {
-		Object object = to(null);
-
-		Assert.assertNull(object);
+		Assert.assertNull(to(null));
 	}
 
 	@Test
