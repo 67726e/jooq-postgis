@@ -1,4 +1,4 @@
-package us.hexcoder.jooq.binding;
+package us.hexcoder.jooq.geometry.binding;
 
 import org.jooq.*;
 import org.jooq.impl.DSL;

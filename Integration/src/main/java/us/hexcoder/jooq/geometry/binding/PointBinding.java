@@ -1,8 +1,8 @@
-package us.hexcoder.jooq.binding;
+package us.hexcoder.jooq.geometry.binding;
 
 import org.jooq.*;
 import org.postgis.Point;
-import us.hexcoder.jooq.converter.PointConverter;
+import us.hexcoder.jooq.geometry.converter.PointConverter;
 
 /**
  * Created by gnelson on 2/14/17.

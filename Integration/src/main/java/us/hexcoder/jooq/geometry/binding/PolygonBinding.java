@@ -1,8 +1,8 @@
-package us.hexcoder.jooq.binding;
+package us.hexcoder.jooq.geometry.binding;
 
 import org.jooq.Converter;
 import org.postgis.Polygon;
-import us.hexcoder.jooq.converter.PolygonConverter;
+import us.hexcoder.jooq.geometry.converter.PolygonConverter;
 
 /**
  * Created by gnelson on 2/14/17.

@@ -1,8 +1,8 @@
-package us.hexcoder.jooq.binding;
+package us.hexcoder.jooq.geometry.binding;
 
 import org.jooq.Converter;
 import org.postgis.MultiLineString;
-import us.hexcoder.jooq.converter.MultiLineStringConverter;
+import us.hexcoder.jooq.geometry.converter.MultiLineStringConverter;
 
 /**
  * Created by gnelson on 2/14/17.

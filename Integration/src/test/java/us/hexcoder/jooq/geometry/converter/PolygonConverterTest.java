@@ -1,10 +1,8 @@
-package us.hexcoder.jooq.converter;
+package us.hexcoder.jooq.geometry.converter;
 
 import org.junit.Assert;
 import org.junit.Test;
 import org.postgis.Polygon;
-
-import java.util.logging.Logger;
 
 /**
  * Created by gnelson on 2/14/17.

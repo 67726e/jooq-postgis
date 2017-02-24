@@ -1,4 +1,4 @@
-package us.hexcoder.jooq.converter;
+package us.hexcoder.jooq.geometry.converter;
 
 import org.postgis.MultiPolygon;
 import org.postgis.binary.BinaryParser;
