@@ -2,6 +2,9 @@ buildscript {
 	repositories {
 		mavenCentral()
 		jcenter()
+		maven {
+			url "http://oss.sonatype.org/content/repositories/snapshots/"
+		}
 	}
 
 	dependencies {
@@ -10,10 +13,12 @@ buildscript {
 		classpath "org.jooq:jooq-meta:${jOOQVersion}"
 		classpath "org.jooq:jooq-codegen:${jOOQVersion}"
 		classpath "nu.studer:gradle-jooq-plugin:3.0.2"
+		classpath "com.github.marceloemanoel:gradle-migrations:0.2.1"
 	}
 }
 
 apply plugin: "java"
+apply plugin: "migrations"
 apply plugin: "nu.studer.jooq"
 
 repositories {
@@ -24,6 +29,7 @@ dependencies {
 	compile "org.joog:jooq:${jOOQVersion}"
 
 	jooqRuntime "org.postgresql:postgresql:${PostgresVersion}"
+	migrationsDriver "org.postgresql:postgresql:${PostgresVersion}"
 }
 
 jooq {
