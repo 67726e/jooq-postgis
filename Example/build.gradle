@@ -1,0 +1,52 @@
+buildscript {
+	repositories {
+		mavenCentral()
+		jcenter()
+	}
+
+	dependencies {
+		classpath "org.postgresql:postgresql:${PostgresVersion}"
+		classpath "org.jooq:jooq:${jOOQVersion}"
+		classpath "org.jooq:jooq-meta:${jOOQVersion}"
+		classpath "org.jooq:jooq-codegen:${jOOQVersion}"
+		classpath "nu.studer:gradle-jooq-plugin:3.0.2"
+	}
+}
+
+apply plugin: "java"
+apply plugin: "nu.studer.jooq"
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile "org.joog:jooq:${jOOQVersion}"
+
+	jooqRuntime "org.postgresql:postgresql:${PostgresVersion}"
+}
+
+jooq {
+	version = "3.11.5"
+
+	example(sourceSets.main) {
+		jdbc {
+			driver = "org.postgresql.Driver"
+			url = "jdbc:postgresql://localhost:5432/jooq-postgis"
+			user = "username"
+			password = "password"
+		}
+
+		generator {
+			database {
+				name = "org.jooq.meta.postgres.PostgresDatabase"
+				inputSchema = "public"
+			}
+
+			target {
+				packageName = "us.hexcoder.jooq-postgis.database"
+			}
+		}
+	}
+}
+
