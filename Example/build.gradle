@@ -26,7 +26,7 @@ repositories {
 }
 
 dependencies {
-	compile "org.joog:jooq:${jOOQVersion}"
+	compile "org.jooq:jooq:${jOOQVersion}"
 
 	jooqRuntime "org.postgresql:postgresql:${PostgresVersion}"
 	migrationsDriver "org.postgresql:postgresql:${PostgresVersion}"
