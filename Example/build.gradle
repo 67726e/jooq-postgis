@@ -47,6 +47,8 @@ jooq {
 			database {
 				name = "org.jooq.meta.postgres.PostgresDatabase"
 				inputSchema = "public"
+
+				excludes = "st_.*|_st.*"
 			}
 
 			target {
