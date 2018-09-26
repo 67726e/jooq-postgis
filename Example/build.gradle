@@ -27,6 +27,9 @@ repositories {
 
 dependencies {
 	compile "org.jooq:jooq:${jOOQVersion}"
+	compile "net.postgis:postgis-jdbc:${PostGISVersion}"
+	
+	compile project(":Integration")
 
 	jooqRuntime "org.postgresql:postgresql:${PostgresVersion}"
 	migrationsDriver "org.postgresql:postgresql:${PostgresVersion}"
@@ -49,6 +52,44 @@ jooq {
 				inputSchema = "public"
 
 				excludes = "st_.*|_st.*"
+
+				forcedTypes {
+					forcedType {
+						userType = "org.postgis.LineString"
+						converter = "us.hexcoder.jooq.geometry.converter.LineStringConverter"
+						expression = "LINE_COLUMN"
+					}
+					
+					forcedType {
+						userType = "org.postgis.Point"
+						converter = "us.hexcoder.jooq.geometry.converter.PointConverter"
+						expression = "POINT_COLUMN"
+					}
+
+					forcedType {
+						userType = "org.postgis.Polygon"
+						converter = "us.hexcoder.jooq.geometry.converter.PolygonConverter"
+						expression = "POLYGON_COLUMN"
+					}
+					
+					forcedType {
+						userType = "org.postgis.MultiLineString"
+						converter = "us.hexcoder.jooq.geometry.converter.MultiLineStringConverter"
+						expression = "MULTILINE_COLUMN"
+					}
+					
+					forcedType {
+						userType = "org.postgis.MultiPoint"
+						converter = "us.hexcoder.jooq.geometry.converter.MultiPointConverter"
+						expression = "MULTIPOINT_COLUMN"
+					}
+					
+					forcedType {
+						userType = "org.postgis.MultiPolygon"
+						converter = "us.hexcoder.jooq.geometry.converter.MultiPolygonConverter"
+						expression = "MULTIPOLYGON_COLUMN"
+					}
+				}
 			}
 
 			target {
